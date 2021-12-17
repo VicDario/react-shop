@@ -40,6 +40,9 @@
 .form {
 	display: flex;
 	flex-direction: column;
+	a {
+		text-align: center;
+	}
 }
 .label {
 	font-size: vars.$sm;
@@ -67,18 +70,19 @@
 	height: 50px;
 }
 .secondary-button {
-	background-color: var(--white);
+	background-color: vars.$white;
 	border-radius: 8px;
-	border: 1px solid var(--hospital-green);
-	color: var(--hospital-green);
+	border: 1px solid vars.$hospital-green;
+	color: vars.$hospital-green;
 	width: 100%;
 	cursor: pointer;
-	font-size: var(--md);
+	font-size: vars.$md;
 	font-weight: bold;
 	height: 50px;
+	margin-top: 20px;
 }
 @media (max-width: 640px) {
 	.login-logo {
 		display: block;
-  }
+	}
 }

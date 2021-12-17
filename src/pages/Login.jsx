@@ -1,48 +1,44 @@
-import React from "react";
+import React from 'react';
 
-import "@styles/Login.scss";
+import '@styles/Login.scss';
 
 import logo from '@logos/logo_yard_sale.svg';
 
 const Login = () => {
-  return (
-    <div className="login">
-      <div className="form-container">
-        <img src={logo} alt="logo" className="login-logo" />
+	return (
+		<div class="login">
+			<div class="form-container">
+				<img src={logo} alt="logo" class="logo" />
 
-        <h1 className="title">Create a new password</h1>
-        <p className="subtitle">Enter a new passwrd for yue account</p>
+				<form action="/" class="form">
+					<label for="email" class="label">
+						Email address
+					</label>
+					<input
+						type="text"
+						id="email"
+						placeholder="platzi@example.com"
+						class="input input-email"
+					/>
 
-        <form action="/" className="form">
-          <label htmlFor="password" className="label">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="*********"
-            className="input input-password"
-          />
+					<label for="password" class="label">
+						Password
+					</label>
+					<input
+						type="password"
+						id="password"
+						placeholder="*********"
+						class="input input-password"
+					/>
 
-          <label htmlFor="new-password" className="label">
-            Password
-          </label>
-          <input
-            type="password"
-            id="new-password"
-            placeholder="*********"
-            className="input input-password"
-          />
+					<input type="submit" value="Log in" class="primary-button login-button" />
+					<a href="/">Forgot my password</a>
+				</form>
 
-          <input
-            type="submit"
-            value="Confirm"
-            className="primary-button login-button"
-          />
-        </form>
-      </div>
-    </div>
-  );
+				<button class="secondary-button signup-button">Sign up</button>
+			</div>
+		</div>
+	);
 };
 
 export default Login;
