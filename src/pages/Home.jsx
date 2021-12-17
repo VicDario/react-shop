@@ -1,10 +1,14 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '@components/Header';
+import ProductList from '@containers/ProductList';
 
 const Home = () => {
-    return (
-            <Header />
-    );
+	return (
+		<>
+			<Header />
+			<ProductList />
+		</>
+	);
 };
 
 export default Home;
