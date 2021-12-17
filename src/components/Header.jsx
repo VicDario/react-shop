@@ -7,8 +7,8 @@ const Header = () => {
       <nav>
         <img src="./icons/icon_menu.svg" alt="menu" class="menu" />
 
-        <div className=""="navbar-left">
-          <img src="./logos/logo_yard_sale.svg" alt="logo" className=""="logo" />
+        <div className="navbar-left">
+          <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
 
           <ul>
             <li>
@@ -32,7 +32,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className=""="navbar-right">
+        <div className="navbar-right">
           <ul>
             <li class="navbar-email">platzi@example.com</li>
             <li class="navbar-shopping-cart">
