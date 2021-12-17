@@ -9,6 +9,7 @@ import NotFound from '@pages/NotFound';
 import MyAccount from '@pages/MyAccount';
 
 import '@styles/global.scss';
+import CreateAccount from '../pages/CreateAccount';
 
 const App = () => {
 	return (
@@ -18,6 +19,7 @@ const App = () => {
 				<Route path="login" element={<Login />} />
 				<Route path="recovery-password" element={<RecoveryPassword />} />
 				<Route path="account" element={<MyAccount />} />
+				<Route path="signup" element={<CreateAccount />} />
 			</Route>
 			<Route path="*" element={<NotFound />} />
 		</Routes>
