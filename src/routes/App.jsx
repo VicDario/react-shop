@@ -7,9 +7,10 @@ import RecoveryPassword from '@pages/RecoveryPassword';
 import Home from '@pages/Home';
 import NotFound from '@pages/NotFound';
 import MyAccount from '@pages/MyAccount';
+import Orders from '@pages/Orders';
+import CreateAccount from '@pages/CreateAccount';
 
 import '@styles/global.scss';
-import CreateAccount from '../pages/CreateAccount';
 
 const App = () => {
 	return (
@@ -20,6 +21,7 @@ const App = () => {
 				<Route path="recovery-password" element={<RecoveryPassword />} />
 				<Route path="account" element={<MyAccount />} />
 				<Route path="signup" element={<CreateAccount />} />
+				<Route path="orders" element={<Orders />} />
 			</Route>
 			<Route path="*" element={<NotFound />} />
 		</Routes>
