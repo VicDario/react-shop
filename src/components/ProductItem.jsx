@@ -7,7 +7,7 @@ const ProductItem = ({ product }) => {
 
 	return (
 		<div className="ProductItem">
-			<img src={product.images[0]} alt={product.description} />
+			<img src={product.images[0]} alt={product.tile} />
 			<div className="product-info">
 				<div>
 					<p>${parseFloat(product.price).toFixed(2)}</p>
