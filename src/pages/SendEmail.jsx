@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '@styles/SendEmail.scss';
 
@@ -16,9 +16,9 @@ const SendEmail = () => {
 				<div className="email-image">
 					<img src={email}alt="email" />
 				</div>
-				<button className="primary-button login-button">Login</button>
+				<Link to='/login'><button className="primary-button login-button">Login</button></Link>
 				<p className="resend">
-					<span>Didn't receive the email?</span>
+					<span>Didn't receive the email? </span>
 					<a href="/">Resend</a>
 				</p>
 			</div>
