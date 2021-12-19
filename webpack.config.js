@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
     mode: "development",
@@ -65,6 +67,13 @@ module.exports = {
             filename: '[name].[contenthash].css',
         })
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({}),
+            new CssMinimizerPlugin()
+        ],
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
