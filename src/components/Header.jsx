@@ -1,68 +1,69 @@
-import React, { useState, useContext } from "react";
-import AppContext from "../context/AppContext";
-import Menu from '@components/Menu';
+import React, { useState, useContext } from 'react';
+import AppContext from '../context/AppContext';
 
-import "@styles/Header.scss";
+import Menu from '@components/Menu';
+import MyOrder from '@containers/MyOrder';
+
+import '@styles/Header.scss';
 
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import shoppingCart from '@icons/icon_shopping_cart.svg';
 
 const Header = () => {
-  const { state } = useContext(AppContext);
-  const [showMenu, setShowMenu] = useState(false);
+	const { state } = useContext(AppContext);
+	const [showMenu, setShowMenu] = useState(false);
+	const [toggleOrders, setToggleOrders] = useState(false);
 
-  const handleToggleMenu = () => {
-    setShowMenu(!showMenu);
-  }
-  return (
-    <header>
-      <nav>
-        <img src={menu} alt="menu" className="navbar-menu" />
+	const handleToggleMenu = () => {
+		setShowMenu(!showMenu);
+	};
+	return (
+		<header>
+			<nav>
+				<img src={menu} alt="menu" className="navbar-menu" />
 
-        <div className="navbar-left">
-          <img src={logo} alt="logo" className="navbar-logo" />
+				<div className="navbar-left">
+					<img src={logo} alt="logo" className="navbar-logo" />
 
-          <ul>
-            <li>
-              <a href="/">All</a>
-            </li>
-            <li>
-              <a href="/">Clothes</a>
-            </li>
-            <li>
-              <a href="/">Electronics</a>
-            </li>
-            <li>
-              <a href="/">Furnitures</a>
-            </li>
-            <li>
-              <a href="/">Toys</a>
-            </li>
-            <li>
-              <a href="/">Others</a>
-            </li>
-          </ul>
-        </div>
+					<ul>
+						<li>
+							<a href="/">All</a>
+						</li>
+						<li>
+							<a href="/">Clothes</a>
+						</li>
+						<li>
+							<a href="/">Electronics</a>
+						</li>
+						<li>
+							<a href="/">Furnitures</a>
+						</li>
+						<li>
+							<a href="/">Toys</a>
+						</li>
+						<li>
+							<a href="/">Others</a>
+						</li>
+					</ul>
+				</div>
 
-        <div className="navbar-right">
-          <ul>
-            <li className="navbar-email" onClick={handleToggleMenu}>platzi@example.com</li>
-            <li className="navbar-shopping-cart">
-              <img src={shoppingCart} alt="shopping cart" />
-              {
-                state.cart.length > 0 ? 
-                  <div>{state.cart.length}</div>
-                : 
-                  null
-              }
-            </li>
-          </ul>
-        </div>
-        {showMenu && <Menu />}
-      </nav>
-    </header>
-  );
+				<div className="navbar-right">
+					<ul>
+						<li className="navbar-email" onClick={handleToggleMenu}>
+							platzi@example.com
+						</li>
+						<li className="navbar-shopping-cart" onClick={() => setToggleOrders(!toggleOrders)}>
+							<img src={shoppingCart} alt="shopping cart" />
+							{state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
+						</li>
+					</ul>
+				</div>
+				{showMenu && <Menu />}
+				{toggleOrders && <MyOrder />}
+			</nav>
+		</header>
+	);
 };
 
 export default Header;
