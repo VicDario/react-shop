@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+import AppContext from '../context/AppContext';
+import useInitialState from '@hooks/useInitialState';
 
 import Layout from '@containers/Layout';
 import Login from '@pages/Login';
@@ -16,7 +19,9 @@ import SendEmail from '@pages/SendEmail';
 import '@styles/global.scss';
 
 const App = () => {
+	const initialState = useInitialState();
 	return (
+		<AppContext.Provider value={initialState} >
 		<Routes>
 			<Route path="/" element={<Layout />}>
 				<Route index element={<Home />} />
@@ -31,6 +36,7 @@ const App = () => {
 			</Route>
 			<Route path="*" element={<NotFound />} />
 		</Routes>
+		</AppContext.Provider>
 	);
 };
 
