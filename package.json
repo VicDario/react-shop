@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/VicDario/react-shop/issues"
   },
-  "homepage": "https://github.com/VicDario/react-shop#readme",
+  "homepage": "https://vicdario.github.io/react-shop/",
   "dependencies": {
     "axios": "^0.24.0",
     "react": "^17.0.2",
