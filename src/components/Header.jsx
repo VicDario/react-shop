@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 
 import Menu from '@components/Menu';
@@ -50,9 +51,20 @@ const Header = () => {
 
 				<div className="navbar-right">
 					<ul>
-						<li className="navbar-email" onClick={handleToggleMenu}>
-							platzi@example.com
-						</li>
+						{state.user ?
+							<li className="navbar-email" onClick={handleToggleMenu}>
+								{state.user.email}
+							</li>
+							:
+							<>
+							<li className="sign-up">
+								<Link to='login'>Login</Link>
+							</li>
+							<li className="sign-up">
+								<Link to='signup'>Sign up</Link>
+							</li>
+							</>
+						}
 						<li className="navbar-shopping-cart" onClick={() => setToggleOrders(!toggleOrders)}>
 							<img src={shoppingCart} alt="shopping cart" />
 							{state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
