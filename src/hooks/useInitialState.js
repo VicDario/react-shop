@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 const initialState = {
 	cart: [],
+	token: null,
+	user: null,
 };
 
 const useInitialState = () => {
@@ -15,16 +17,32 @@ const useInitialState = () => {
 	};
 
 	const removeFromCart = (payload) => {
-        setState({
-            ...state,
-            cart: state.cart.filter(item => item.id !== payload.id)
-        })
-    };
+		setState({
+			...state,
+			cart: state.cart.filter((item) => item.id !== payload.id),
+		});
+	};
+
+	const setUser = (payload) => {
+		setState({
+			...state,
+			user: payload,
+		});
+	};
+
+	const setToken = (payload) => {
+		setState({
+			...state,
+			token: payload,
+		});
+	};
 
 	return {
 		state,
 		addToCart,
-        removeFromCart
+		removeFromCart,
+		setUser,
+		setToken,
 	};
 };
 
