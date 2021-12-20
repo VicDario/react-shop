@@ -1,13 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AppContext from '../context/AppContext';
 import axios from 'axios';
 
 import '@styles/Login.scss';
 
 import logo from '@logos/logo_yard_sale.svg';
 
-const API = ''
-
 const Login = () => {
+	const { setToken, setUser } = useContext(AppContext);
+	const navigate = useNavigate();
 	const form = useRef(null);
 
 	const handleSubmit = async (e) => {
@@ -17,7 +19,14 @@ const Login = () => {
 			email: formData.get('email'),
 			password: formData.get('password'),
 		}
-		const response = axios.post('https://api.escuelajs.co/api/v1/auth/login', data);
+		const response = await axios.post('https://api.escuelajs.co/api/v1/auth/login', data);
+		if(response.status === 201) {
+			setToken(response.data.access_token);
+			const login = await axios.get('https://api.escuelajs.co/api/v1/auth/profile', { headers: { Authorization: `Bearer ${response.data.access_token}` } });
+			setUser(login.data);
+			navigate('/');
+		}
+		else alert('Error');
 	}
 	return (
 		<div className="login">
