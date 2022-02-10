@@ -1,4 +1,4 @@
-import useInitialState from '../hooks/useInitialState';
+import useInitialState from '@hooks/useInitialState';
 import AppContext from '@context/AppContext';
 
 function MyApp({ Component, pageProps }) {
