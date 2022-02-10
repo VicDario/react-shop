@@ -1,40 +1,41 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
+import Image from 'next/image';
 import OrderItem from '@components/OrderItem';
 
 import AppContext from '../context/AppContext';
 
-import '@styles/MyOrder.scss';
+import styles from '@styles/MyOrder.module.scss';
 
 import arrow from '@icons/flechita.svg';
 
 const MyOrder = () => {
-	const { state } = useContext(AppContext);
+  const { state } = useContext(AppContext);
 
-	const sumTotal = () => {
-		const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
-		const sum = state.cart.reduce(reducer, 0);
-		return sum;
-	};
-	return (
-		<aside className="MyOrder">
-			<div className="title-container">
-				<img src={arrow} alt="arrow" />
-				<p className="title">My order</p>
-			</div>
-			<div className="my-order-content">
-				{state.cart.map((product) => {
-					return <OrderItem product={product} key={`orderItem-${product.id}`} />;
-				})}
-				<div className="order">
-					<p>
-						<span>Total</span>
-					</p>
-					<p>${sumTotal()}</p>
-				</div>
-				<button className="primary-button">Checkout</button>
-			</div>
-		</aside>
-	);
+  const sumTotal = () => {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+    const sum = state.cart.reduce(reducer, 0);
+    return sum;
+  };
+  return (
+    <aside className={styles.MyOrder}>
+      <div className={styles['title-container']}>
+        <Image src={arrow} alt="arrow" />
+        <p className={styles.title}>My order</p>
+      </div>
+      <div className={styles['my-order-content']}>
+        {state.cart.map((product) => {
+          return <OrderItem product={product} key={`orderItem-${product.id}`} />;
+        })}
+        <div className={styles.order}>
+          <p>
+            <span>Total</span>
+          </p>
+          <p>${sumTotal()}</p>
+        </div>
+        <button className={styles['primary-button']}>Checkout</button>
+      </div>
+    </aside>
+  );
 };
 
 export default MyOrder;

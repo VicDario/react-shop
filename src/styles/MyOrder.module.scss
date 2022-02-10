@@ -15,13 +15,13 @@
 .title-container {
 	display: flex;
 }
-.title-container img {
+.title-container span {
 	transform: rotate(180deg);
-	margin-right: 14px;
 }
 .title {
 	font-size: vars.$lg;
 	font-weight: bold;
+	padding-left: 14px;
 }
 .order {
 	display: grid;
