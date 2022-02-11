@@ -15,12 +15,12 @@ const OrderItem = ({ product }) => {
 
   return (
     <div className={styles.OrderItem}>
-      <figure>
-        <Image src={product.images[0]} alt={product.title} />
-      </figure>
-      <p>{product.title}</p>
-      <p>${parseFloat(product.price).toFixed(2)}</p>
-      <img src={close} alt="close" onClick={() => handleRemove(product)} />
+      <figure>{/* <Image src={product?.images[0]} alt={product?.title} /> */}</figure>
+      <p>{product?.title}</p>
+      <p>${parseFloat(product?.price).toFixed(2)}</p>
+      <button className={styles['button-order']} onClick={() => handleRemove(product)}>
+        <Image src={close} alt="close" />
+      </button>
     </div>
   );
 };

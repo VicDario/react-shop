@@ -15,10 +15,12 @@
   align-items: center;
   margin-top: 12px;
 }
-.product-info figure {
+.product-info button {
   margin: 0;
+  background-color: transparent;
+  border: none;
 }
-.product-info figure img {
+.product-info button * {
   width: 35px;
   height: 35px;
 }
