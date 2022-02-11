@@ -30,7 +30,11 @@ const Header = () => {
 
         <div className={styles['navbar-left']}>
           <div className={styles['navbar-logo']}>
-            <Image src={logo} alt="logo" />
+            <Link href="/">
+              <a>
+                <Image src={logo} alt="logo" />
+              </a>
+            </Link>
           </div>
 
           <ul>
