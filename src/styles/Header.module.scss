@@ -52,6 +52,11 @@
 }
 .navbar-shopping-cart {
   position: relative;
+  border: 1px solid vars.$white;
+  &:hover {
+    border: 1px solid vars.$hospital-green;
+    border-radius: 5px;
+  }
   button {
     border: none;
     background-color: transparent;
