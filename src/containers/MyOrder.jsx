@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import OrderItem from '@components/OrderItem';
 
-import AppContext from '../context/AppContext';
+import AppContext from '@context/AppContext';
 
 import styles from '@styles/MyOrder.module.scss';
 
@@ -32,7 +33,11 @@ const MyOrder = () => {
           </p>
           <p>${sumTotal()}</p>
         </div>
-        <button className={styles['primary-button']}>Checkout</button>
+        <Link href="/checkout">
+          <a>
+            <button className={styles['primary-button']}>Checkout</button>
+          </a>
+        </Link>
       </div>
     </aside>
   );
