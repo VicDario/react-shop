@@ -45,9 +45,16 @@
   color: vars.$hospital-green;
 }
 .navbar-email {
-  color: vars.$very-light-pink;
-  font-size: vars.$sm;
   margin-right: 12px;
+  button {
+    font-size: vars.$sm;
+    color: vars.$very-light-pink;
+    background: transparent;
+    border: none;
+  }
+  button:hover {
+    color: vars.$hospital-green;
+  }
 }
 .navbar-shopping-cart {
   position: relative;

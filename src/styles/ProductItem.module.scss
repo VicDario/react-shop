@@ -36,6 +36,9 @@
   margin-bottom: 0;
   color: vars.$very-light-pink;
 }
+.pointer {
+  cursor: pointer;
+}
 @media (max-width: 640px) {
   .cards-container {
     grid-template-columns: repeat(auto-fill, 140px);

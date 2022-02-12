@@ -18,7 +18,7 @@ const ProductInfo = () => {
           With its practical position, this bike also fulfills a decorative function, add your hall
           or workspace.
         </p>
-        <button className={(styles['primary-button'], styles['add-to-cart-button'])}>
+        <button className={`${styles['primary-button']} ${styles['add-to-cart-button']}`}>
           <Image src={addToCart} alt="Add to cart" />
           Add to cart
         </button>

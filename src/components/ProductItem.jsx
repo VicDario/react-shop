@@ -30,11 +30,11 @@ const ProductItem = ({ product }) => {
         </div>
         <button className={styles['more-clickable-area']} onClick={() => handleAddToCart(product)}>
           {state.cart.includes(product) ? (
-            <div className={(styles.disabled, styles['add-to-cart-btn'])}>
+            <div className={`${styles.disabled} ${styles['add-to-cart-btn']}`}>
               <Image src={addedToCartImage} alt="added to cart" />
             </div>
           ) : (
-            <div className={(styles['added-to-cart-btn'], styles.pointer)}>
+            <div className={`${styles.pointer} ${styles['added-to-cart-btn']}`}>
               <Image src={addToCartImage} alt="add to cart" />
             </div>
           )}
