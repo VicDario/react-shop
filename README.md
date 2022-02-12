@@ -1,4 +1,4 @@
-# YarnShop React
+# Yard Store React
 - This is a web created with a series of courses of Platzi
 
 ## Chronology
