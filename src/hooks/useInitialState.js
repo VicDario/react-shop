@@ -37,12 +37,21 @@ const useInitialState = () => {
     });
   };
 
+  const signOut = () => {
+    setState({
+      ...state,
+      token: null,
+      user: null,
+    });
+  };
+
   return {
     state,
     addToCart,
     removeFromCart,
     setUser,
     setToken,
+    signOut,
   };
 };
 
