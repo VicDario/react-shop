@@ -45,3 +45,22 @@
 	text-align: end;
 	font-weight: bold;
 }
+
+.button {
+	background-color: vars.$hospital-green;
+	border-radius: 8px;
+	border: none;
+	color: vars.$white;
+	width: 100%;
+	cursor: pointer;
+	font-size: vars.$md;
+	font-weight: bold;
+	height: 50px;
+}
+
+.link {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
