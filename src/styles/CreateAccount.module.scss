@@ -1,4 +1,4 @@
-@use 'vars';
+@use './vars';
 
 .CreateAccount {
 	width: 100%;
@@ -15,7 +15,6 @@
 	width: 150px;
 	margin-bottom: 48px;
 	justify-self: center;
-	display: none;
 }
 .title {
 	font-size: vars.$lg;
@@ -26,10 +25,7 @@
 	display: flex;
 	flex-direction: column;
 }
-.form div {
-	display: flex;
-	flex-direction: column;
-}
+
 .label {
 	font-size: vars.$sm;
 	font-weight: bold;
@@ -43,12 +39,12 @@
 	font-size: vars.$md;
 	padding: 6px;
 	margin-bottom: 12px;
+	&-name, &-email, &-password {
+		margin-bottom: 22px;
+
+	}
 }
-.input-name,
-.input-email,
-.input-password {
-	margin-bottom: 22px;
-}
+
 .primary-button {
 	background-color: vars.$hospital-green;
 	border-radius: 8px;
