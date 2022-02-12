@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Yarn Store - Next</title>
+        <title>Yard Store - Next</title>
       </Head>
       <AppContext.Provider value={initialState}>
         <Component {...pageProps} />
