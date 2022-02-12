@@ -99,7 +99,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        {showMenu && <Menu />}
+        {showMenu && <Menu handler={handleToggleMenu} />}
         {toggleOrders && <MyOrder />}
       </nav>
     </header>
