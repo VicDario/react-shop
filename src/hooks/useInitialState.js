@@ -45,6 +45,13 @@ const useInitialState = () => {
     });
   };
 
+  const clearCart = () => {
+    setState({
+      ...state,
+      cart: [],
+    });
+  };
+
   return {
     state,
     addToCart,
@@ -52,6 +59,7 @@ const useInitialState = () => {
     setUser,
     setToken,
     signOut,
+    clearCart,
   };
 };
 
