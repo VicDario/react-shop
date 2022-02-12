@@ -1,15 +1,16 @@
 @use "./vars";
 
 .Menu {
-  width: 100px;
+  width: 170px;
   height: auto;
   border: 1px solid vars.$very-light-pink;
   border-radius: 6px;
   padding: 20px 20px 0 20px;
   position: absolute;
-  right: 50px;
+  right: 75px;
   top: 60px;
   background-color: vars.$white;
+  z-index: 1;
 }
 .Menu ul {
   list-style: none;
@@ -27,9 +28,12 @@
   padding-top: 20px;
   border-top: 1px solid vars.$very-light-pink;
 }
-.Menu ul li:last-child a {
+.Menu ul li:last-child button {
   color: vars.$hospital-green;
-  font-size: vars.$sm;
+  font-size: vars.$md;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 20px;
 }
 .Menu ul li a {
   color: vars.$black;

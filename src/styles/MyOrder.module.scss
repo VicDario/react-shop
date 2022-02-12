@@ -4,24 +4,25 @@
 	width: 360px;
 	padding: 24px;
 	box-sizing: border-box;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	background-color: white;
 	top: 60px;
 	bottom: 0;
 	border-radius: 6px;
 	border : 1px solid vars.$very-light-pink;
+	z-index: 1;
 }
 .title-container {
 	display: flex;
 }
-.title-container img {
+.title-container span {
 	transform: rotate(180deg);
-	margin-right: 14px;
 }
 .title {
 	font-size: vars.$lg;
 	font-weight: bold;
+	padding-left: 14px;
 }
 .order {
 	display: grid;
