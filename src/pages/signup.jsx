@@ -21,12 +21,14 @@ const CreateAccount = () => {
       password: formData.get('password'),
       role: 'customer',
     };
-    const response = await axios.post('https://api.escuelajs.co/api/v1/users', data);
-    if (response.status === 201) {
-      alert('User created successfully');
+    try {
+      const response = await axios.post('https://api.escuelajs.co/api/v1/users', data);
       setUser(response.data);
       router.push('/login');
-    } else alert('Error');
+      alert('User created successfully');
+    } catch (error) {
+      alert('Ops! Something went wrong');
+    }
   };
   return (
     <div className={styles.CreateAccount}>

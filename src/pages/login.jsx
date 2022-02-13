@@ -22,15 +22,17 @@ const Login = () => {
       email: formData.get('email'),
       password: formData.get('password'),
     };
-    const response = await axios.post('https://api.escuelajs.co/api/v1/auth/login', data);
-    if (response.status === 201) {
+    try {
+      const response = await axios.post('https://api.escuelajs.co/api/v1/auth/login', data);
       setToken(response.data.access_token);
       const login = await axios.get('https://api.escuelajs.co/api/v1/auth/profile', {
         headers: { Authorization: `Bearer ${response.data.access_token}` },
       });
       setUser(login.data);
       router.push('/');
-    } else alert('Error');
+    } catch (error) {
+      alert('Username or password is incorrect');
+    }
   };
   return (
     <div className={styles.login}>
