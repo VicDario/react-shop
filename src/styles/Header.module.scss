@@ -11,6 +11,10 @@
 .navbar-menu {
   display: none;
   margin: auto 0;
+  &_button {
+    background-color: transparent;
+    border: none;
+  }
 }
 .navbar-logo {
   width: 100px;

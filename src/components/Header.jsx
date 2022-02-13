@@ -6,6 +6,7 @@ import AppContext from '@context/AppContext';
 
 import Menu from '@components/Menu';
 import MyOrder from '@containers/MyOrder';
+import MenuResponsive from '@components/MenuResponsive';
 
 import styles from '@styles/Header.module.scss';
 
@@ -17,15 +18,20 @@ const Header = () => {
   const { state } = useContext(AppContext);
   const [showMenu, setShowMenu] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
-
+  const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+  const handleToggleMenuResponsive = () => {
+    setShowResponsiveMenu(!showResponsiveMenu);
   };
   return (
     <header>
       <nav className={styles.nav}>
         <div className={styles['navbar-menu']}>
-          <Image src={menu} alt="menu" />
+          <button className={styles['navbar-menu_button']} onClick={handleToggleMenuResponsive}>
+            <Image src={menu} alt="menu" />
+          </button>
         </div>
 
         <div className={styles['navbar-left']}>
@@ -36,8 +42,7 @@ const Header = () => {
               </a>
             </Link>
           </div>
-
-          <ul>
+          <ul className={styles['menu-desktop']}>
             <li>
               <Link href="/">
                 <a>All</a>
@@ -101,6 +106,7 @@ const Header = () => {
         </div>
         {showMenu && <Menu handler={handleToggleMenu} />}
         {toggleOrders && <MyOrder />}
+        {showResponsiveMenu && <MenuResponsive />}
       </nav>
     </header>
   );

@@ -1,0 +1,40 @@
+@use './vars';
+
+.mobile-menu {
+  top: 61px;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+  border-bottom: 1px solid vars.$black;
+}
+.mobile-menu a {
+  text-decoration: none;
+  color: vars.$black;
+  font-weight: bold;
+  /* margin-bottom: 24px; */
+}
+.mobile-menu ul {
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+.mobile-menu ul:nth-child(1) {
+  border-bottom: 1px solid vars.$very-light-pink;
+}
+.mobile-menu ul li {
+  margin-bottom: 24px;
+}
+.email {
+  font-size: vars.$sm;
+  font-weight: 300 !important;
+}
+.sign-out {
+  font-size: vars.$sm;
+  background-color: transparent;
+  border: none;
+  color: vars.$hospital-green !important;
+}
